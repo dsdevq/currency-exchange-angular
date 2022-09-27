@@ -1,0 +1,37 @@
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+* {
+  list-style: none;
+  margin: 0;
+  font-size: large;
+  font-weight: 500;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+$bgslate500: rgb(100 116 139);
+$bgslate300: rgb(203 213 225);
+$bgslate50: rgb(248 250 252);
+
+[class*="__container"] {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.main {
+  flex: 1 1 auto;
+  background-color: $bgslate300;
+  &__container {
+    display: flex;
+    min-height: 100px;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+}

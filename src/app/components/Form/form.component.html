@@ -1,0 +1,19 @@
+<form>
+  <fieldset>
+    <legend>{{heading}}</legend>
+    <div class='input'>
+      <input type='number' [value]="amount" (change)="handleOnAmountChange($event)" />
+      <select [value]="select" (change)="handleOnChange($event)">
+        <option>
+          EUR
+        </option>
+        <option>
+          USD
+        </option>
+        <option>
+          UAH
+        </option>
+      </select>
+    </div>
+  </fieldset>
+</form>

@@ -1,0 +1,11 @@
+<div class='wrapper'>
+  <app-header></app-header>
+  <main class='main'>
+    <div class='main__container'>
+      <app-form [select]="to" [heading]="'Convert To'" [amount]="toAmount" (selectChange)="handleTo($event)"
+        (amountChange)="handleAmountTo($event)"></app-form>
+      <app-form [select]="from" [heading]="'Convert From'" [amount]="fromAmount" (selectChange)="handleFrom($event)"
+        (amountChange)="handleAmountFrom($event)"></app-form>
+    </div>
+  </main>
+</div>

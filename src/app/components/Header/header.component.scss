@@ -1,0 +1,25 @@
+$bgslate500: rgb(100 116 139);
+$bgslate50: rgb(248 250 252);
+
+.header {
+  background-color: $bgslate500;
+  &__container {
+    display: flex;
+    align-items: center;
+    min-height: 70px;
+  }
+  &__menu {
+    display: flex;
+    flex: 1;
+    gap: 10px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
+.menu {
+  &__item {
+    list-style: none;
+    white-space: nowrap;
+    color: $bgslate50;
+  }
+}

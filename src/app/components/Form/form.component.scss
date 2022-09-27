@@ -1,0 +1,68 @@
+$bgslate500: rgb(100 116 139);
+$bgslate300: rgb(203 213 225);
+$bgslate50: rgb(248 250 252);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+form {
+  display: flex;
+  padding: 1rem 0;
+  &:nth-child(even) {
+    color: green;
+    input {
+      border-radius: 0rem 0rem 0rem 1rem;
+    }
+    select {
+      border-radius: 0 1rem 0rem 0;
+    }
+    input,
+    select {
+      border-color: green;
+    }
+  }
+  &:nth-child(odd) {
+    color: darken($color: orange, $amount: 5%);
+    input {
+      border-radius: 1rem 0rem 0rem 0rem;
+    }
+    select {
+      border-radius: 0 0 1rem 0;
+    }
+    input,
+    select {
+      border-color: darken($color: orange, $amount: 5%);
+    }
+  }
+}
+
+fieldset {
+  border: none;
+}
+
+input {
+  background-color: $bgslate50;
+  padding: 1rem;
+  max-width: 200px;
+  outline: none;
+  border: 1px solid black;
+  border-right: none;
+  height: 60px;
+}
+select {
+  background-color: $bgslate50;
+  height: 60px;
+  border: none;
+  outline: none;
+  padding: 1rem 0;
+  border: 1px solid black;
+  border-left: none;
+}
+
+.input {
+  display: flex;
+  align-items: center;
+}
