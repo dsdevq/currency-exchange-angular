@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { CurrencyDataService } from './currency-data.service';
 
@@ -7,31 +6,22 @@ import { CurrencyDataService } from './currency-data.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
-  items:any[] = []
+export class AppComponent{
   title = 'currency-exchange';
-  options = []
   to = 'EUR'
   from = 'UAH'
-  toAmount = 1
-  fromAmount = 1
+  toAmount!: number
+  fromAmount!: number
   amountFrom = false
 
   constructor(private service: CurrencyDataService){}
-
-  ngOnInit(): void {
-    this.service.calculations(this.from, this.to, this.toAmount)
-    .subscribe(response => {
-      this.fromAmount = +response.result.toFixed(2)
-    })
-  }
 
   handleTo(el: string) {
     this.to = el
     this.amountFrom = false
     this.service.calculations(this.from, this.to, this.toAmount)
     .subscribe(response => {
-      this.fromAmount = +response.result.toFixed(2)
+        this.fromAmount = +response.result.toFixed(2)
     })
   }
 
@@ -49,7 +39,10 @@ export class AppComponent implements OnInit {
     this.amountFrom = true
     this.service.calculations(this.to, this.from, this.fromAmount)
     .subscribe(response => {
+      if (response.result && response.result > 0) {
       this.toAmount = +response.result.toFixed(2)
+      }
+      else this.toAmount = 0
     })
   }
 
@@ -58,7 +51,10 @@ export class AppComponent implements OnInit {
     this.amountFrom = false
     this.service.calculations(this.from, this.to, this.toAmount)
     .subscribe(response => {
+      if (response.result && response.result > 0) {
       this.fromAmount = +response.result.toFixed(2)
+      }
+      else this.fromAmount = 0
     })
   }
 

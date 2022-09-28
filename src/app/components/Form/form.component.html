@@ -2,7 +2,7 @@
   <fieldset>
     <legend>{{heading}}</legend>
     <div class='input'>
-      <input type='number' [value]="amount" (change)="handleOnAmountChange($event)" />
+      <input type='number' [formControl]="number" [value]="amount" />
       <select [value]="select" (change)="handleOnChange($event)">
         <option>
           EUR
